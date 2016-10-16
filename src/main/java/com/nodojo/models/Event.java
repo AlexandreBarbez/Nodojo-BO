@@ -1,4 +1,4 @@
-package event;
+package com.nodojo.models;
 
 public class Event {
 
