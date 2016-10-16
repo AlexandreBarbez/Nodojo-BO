@@ -2,11 +2,13 @@ package com.nodojo.models;
 
 public class Event {
 
-	private final long id;
-	private final String name;
-	private final String date;
-	private final String address;
+	private long id;
+	private String name;
+	private String date;
+	private String address;
 	
+	Event(){//JPA use	
+	}
 	public Event(long p_id,String p_name, String p_date, String p_address){
 		this.id = p_id;
 		this.name = p_name;
