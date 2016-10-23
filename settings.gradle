@@ -16,8 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-<<<<<<< Updated upstream
-rootProject.name = 'Nodojo'
-=======
 rootProject.name = 'Nodojo-BO'
->>>>>>> Stashed changes

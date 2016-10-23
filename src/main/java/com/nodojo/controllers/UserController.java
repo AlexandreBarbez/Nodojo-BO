@@ -1,5 +1,6 @@
 package com.nodojo.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,9 +8,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nodojo.dao.UsersRepository;
+import com.nodojo.models.User;
+
 @RestController
 public class UserController {
-
+	@Autowired
+	private UsersRepository usersDAO;
+	
 	//GET
 		@RequestMapping(value="/user/",method = RequestMethod.GET)
 		public @ResponseBody String  getUsers(){
@@ -35,6 +41,7 @@ public class UserController {
 		@RequestMapping(value="/user/",method = RequestMethod.POST)
 		public @ResponseBody String postUser(@RequestParam(required=true) String userName, @RequestParam(required=true) String password ){
 			//TODO return the created item URI
+			usersDAO.save(new User(userName,password));
 			return "Entered in postUser. Create a new entry in the collection with userName = "+userName+" and password = "+password+". The new entry's URI is assigned automatically and is usually returned by the operation.";
 		}
 		

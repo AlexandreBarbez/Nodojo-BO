@@ -7,7 +7,7 @@ public class Event {
 	private String date;
 	private String address;
 	
-	Event(){//JPA use	
+	protected Event(){//JPA use	
 	}
 	public Event(long p_id,String p_name, String p_date, String p_address){
 		this.id = p_id;
